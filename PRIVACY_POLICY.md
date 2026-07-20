@@ -115,5 +115,7 @@ Complete data removal: delete `%APPDATA%\PilotAI\`.
 We may update this policy as the app changes. The updated version will be posted here with a new effective date.
 
 For privacy or security questions: **pilotaifeedback@gmail.com**
+**##Instagram**
+@pilotaifeedback
 
 Data subject requests (access, deletion, portability): **pilotaifeedback@gmail.com** — we respond within 30 days.
