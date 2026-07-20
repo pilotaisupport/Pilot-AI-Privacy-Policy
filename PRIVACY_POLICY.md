@@ -1,6 +1,6 @@
 # PilotAI — Privacy Policy
 
-**Simple version:** PilotAI only accesses device data when you enable a feature or grant a permission. Microphone, screen, and file access are optional. Conversations stay on your device or go to the AI gateway you choose. No data goes to a central PilotAI cloud.
+**PilotAI** only accesses device data when you enable a feature or grant a permission. Microphone, screen, and file access are optional. Conversations stay on your device or go to the AI gateway you choose. No data goes to a central PilotAI cloud.
 
 **No ads or analytics.** No ad, analytics, or crash-reporting SDKs.
 
