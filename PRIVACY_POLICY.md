@@ -6,7 +6,7 @@
 
 **Permission-based.** Microphone, screen capture, file system, and notification access are optional.
 
-**Your AI provider.** The app sends transcribed text to the AI provider you configure (Groq, Ollama, or another compatible service).
+**Your AI provider.** The app sends transcribed text to the AI provider you configure (Groq, Ollama (MINICPM5-1B), or another compatible service).
 
 **Optional features.** Gmail, WhatsApp, web search, weather, location, and voice biometrics are all optional. You control each feature.
 
@@ -18,7 +18,7 @@
 
 ## 1. Scope
 
-This policy applies to the PilotAI desktop application for Windows. It does not cover the privacy practices of your AI provider (e.g., Groq, Ollama), Gmail, WhatsApp, DuckDuckGo, or any other third-party service you choose to connect to through PilotAI.
+This policy applies to the PilotAI desktop application for Windows. It does not cover the privacy practices of your AI provider (e.g., Groq, Ollama (MINICPM5-1B)), Gmail, WhatsApp, DuckDuckGo, or any other third-party service you choose to connect to through PilotAI.
 
 ---
 
@@ -50,7 +50,7 @@ The app can access the following categories of data, depending on which features
 
 ## 3. Where data goes
 
-**Your AI provider.** Transcribed text and conversation context are sent to the AI provider you configure (Groq, Ollama, or another compatible service).
+**Your AI provider.** Transcribed text and conversation context are sent to the AI provider you configure (Groq, Ollama (MINICPM5-1B), or another compatible service).
 
 **Gmail.** If you connect Gmail, email data is sent to Google's Gmail API servers.
 
@@ -104,7 +104,7 @@ Complete data removal: delete `%APPDATA%\PilotAI\`.
 
 - **Permissions.** You can grant or revoke microphone, file system, and other permissions at any time.
 - **Features.** You can disable wake word, voice biometrics, Gmail, WhatsApp, screen capture, web search, and other features in Settings.
-- **AI provider.** You can switch between Groq (cloud) and Ollama (local) at any time. Local mode sends no data off your device.
+- **AI provider.** You can switch between Groq (cloud) and Ollama (MINICPM5-1B)(MINICPM5-1B)(local) at any time. Local mode sends no data off your device.
 - **Data deletion.** You can delete conversations, memories, voiceprints, and history from Settings → Privacy.
 - **Uninstall.** Removing the app deletes all locally stored data.
 
