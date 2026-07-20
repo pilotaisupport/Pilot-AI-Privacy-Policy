@@ -1,256 +1,119 @@
-# PRIVACY POLICY — PilotAI Desktop Application
+# PilotAI — Privacy Policy
 
-**Effective Date:** July 20, 2026
-**Policy URL:** https://github.com/pilotaisupport/Pilot-AI-Privacy-Policy/blob/main/README.md
+**Simple version:** PilotAI only accesses device data when you enable a feature or grant a permission. Microphone, screen, and file access are optional. Conversations stay on your device or go to the AI gateway you choose. No data goes to a central PilotAI cloud.
 
----
+**No ads or analytics.** No ad, analytics, or crash-reporting SDKs.
 
-## 1. DEFINITIONS
+**Permission-based.** Microphone, screen capture, file system, and notification access are optional.
 
-**"App"** means PilotAI desktop software for Windows.
-**"Device"** means the user's personal computer.
-**"Personal Data"** means any information relating to an identified or identifiable natural person.
-**"Processing"** means any operation performed on Personal Data.
-**"Controller"** means [Developer Name/Entity], [Address].
-**"DPO"** means Data Protection Officer, reachable at privacy@pilotai.app.
-**"Third Party"** means any natural or legal person, public authority, agency, or body other than the data subject, controller, or processor.
-**"Special Category Data"** means biometric data processed for unique identification (Art. 9 GDPR).
-**"Always-On Listening"** means continuous microphone capture for wake word detection occurring entirely on Device.
+**Your AI provider.** The app sends transcribed text to the AI provider you configure (Groq, Ollama, or another compatible service).
+
+**Optional features.** Gmail, WhatsApp, web search, weather, location, and voice biometrics are all optional. You control each feature.
+
+**Effective date:** July 20, 2026 · **Applies to:** Windows desktop app
+
+**Support email:** pilotaifeedback@gmail.com
 
 ---
 
-## 2. CONTROLLER IDENTITY & CONTACT
+## 1. Scope
 
-| Role | Contact |
-|------|---------|
-| **Controller** | [Developer Name], [Address], [Country] |
-| **DPO** | [DPO Name/Email] |
-| **Data Subject Requests** | privacy@pilotai.app |
-| **Response Obligation** | 30 days (GDPR Art. 12(3)), 45 days (CCPA §1798.130(a)(2)) |
+This policy applies to the PilotAI desktop application for Windows. It does not cover the privacy practices of your AI provider (e.g., Groq, Ollama), Gmail, WhatsApp, DuckDuckGo, or any other third-party service you choose to connect to through PilotAI.
 
 ---
 
-## 3. PERSONAL DATA COLLECTED
+## 2. Information the app can access
 
-### 3.1 Data Provided by the Data Subject
+The app can access the following categories of data, depending on which features you enable:
 
-- **Identity Data:** name, alias
-- **Authentication Data:** API keys (encrypted at rest with AES-256-GCM), Gmail OAuth tokens
-- **Contact Data:** email recipients, WhatsApp contact names
-- **Communication Data:** email content accessed via Gmail API
+**Connection and setup data** — AI provider API key, gateway host/port, model selection, wake-word settings, feature toggles, and pairing state.
 
-### 3.2 Data Collected Automatically
+**Microphone audio** — if you enable wake-word detection or voice input. Wake-word detection runs locally (64ms frames, not retained). Voice input is transcribed locally via Whisper and the resulting text is sent to your configured AI provider.
 
-- **Audio Data:** continuous microphone capture for wake word detection (Device-local, 64ms frames, not retained); speech segments for transcription (Device-local Whisper, discarded after transcription)
-- **Voice Biometrics (Special Category):** numerical voiceprint embedding stored at `%APPDATA%\PilotAI\speaker_enrollment\voiceprint.json`; never leaves Device. Collected only upon explicit opt-in consent.
-- **Conversation Data:** full chat history (SQLite + JSON, Device-local); transmitted to Third-Party AI provider as prompt context
-- **Screen Captures:** OCR of browser tab bar region; UI automation click-target matching; WhatsApp QR. Processed in memory, not retained.
-- **Usage Data:** command success counts (Device-local `assistant_stats.json`)
-- **Automation Data:** click coordinates (Device-local `click_memory.json`)
+**Voice biometrics** — if you enable speaker verification. A numerical voiceprint is stored locally and never leaves your device. Requires explicit opt-in.
 
-### 3.3 Data Transmitted to Third Parties
+**Screen content** — if you enable OCR-based browser tab detection or UI automation. Screenshots are processed in memory and not retained.
 
-Per feature invocation only, minimized to necessity:
+**Conversation history** — stored locally. Sent to your AI provider as context for response generation.
 
-| Third Party | Data | Purpose | Legal Basis for Transfer |
-|-------------|------|---------|--------------------------|
-| Groq Inc. (USA) | Transcribed text, conversation history, identity data | AI response generation | Standard Contractual Clauses (SCCs) + necessity for contract performance |
-| Google LLC (USA) | Email content, OAuth token, sender/recipient metadata | Email reading/sending via Gmail API | OAuth consent + SCCs |
-| DuckDuckGo (USA) | Search query string | Web search result retrieval | Anonymized; no Personal Data retained |
-| wttr.in | City name | Weather data | Anonymized; no Personal Data retained |
-| ipinfo.io / geocoder | Public IP address (transient, not stored) | Approximate geolocation for weather | Transient, not retained |
-| OpenStreetMap | Place name string | Geocoding | Anonymized |
+**Email data** — if you connect Gmail. The app can read email metadata, send emails, and modify messages (mark read, archive, delete). Controlled by Gmail OAuth scopes.
 
-### 3.4 Data NOT Collected
+**WhatsApp contacts and messages** — if you enable WhatsApp integration. Processed through a local browser automation session.
 
-The App does not collect: precise geolocation, browsing history (beyond active tab for browser detection), contact list contents (beyond names for WhatsApp addressing), financial information, health data, political opinions, religious beliefs, or trade union membership.
+**Search queries and location** — if you use web search or weather features. Sent to DuckDuckGo, wttr.in, or geocoding services only at your request.
+
+**File system** — the app reads and writes configuration, conversation history, and voice samples to app-private storage. With your instruction, it can save files to your Desktop or other locations.
+
+**Clipboard** — the app writes to the system clipboard only when you click "copy" on an AI message.
 
 ---
 
-## 4. LEGAL BASES FOR PROCESSING
+## 3. Where data goes
 
-### 4.1 GDPR Art. 6 — Lawfulness of Processing
+**Your AI provider.** Transcribed text and conversation context are sent to the AI provider you configure (Groq, Ollama, or another compatible service).
 
-| Processing Activity | Legal Basis (Art. 6) | Rationale |
-|--------------------|---------------------|-----------|
-| Wake word detection | 6(1)(f) Legitimate interests | Core functionality; Device-local only; no data leaves Device |
-| Speech transcription | 6(1)(b) Contractual necessity | Essential to provide the voice assistant service |
-| AI response generation | 6(1)(b) Contractual necessity | Essential to provide the AI assistant service |
-| Conversation memory | 6(1)(f) Legitimate interests | User experience continuity |
-| Gmail integration | 6(1)(a) Consent | Optional feature; revocable |
-| Web search / weather | 6(1)(b) Contractual necessity | Performed at user's explicit request |
-| Usage statistics | 6(1)(f) Legitimate interests | Service improvement; Device-local |
+**Gmail.** If you connect Gmail, email data is sent to Google's Gmail API servers.
 
-### 4.2 GDPR Art. 9 — Special Category Data
+**WhatsApp.** WhatsApp messages are sent through WhatsApp Web via a local browser session.
 
-Voice biometric processing requires **explicit consent** (Art. 9(2)(a)):
-- Collected only after affirmative opt-in via consent dialog
-- Never leaves Device
-- Revocable at any time via Settings → Voice → Speaker Verification OFF
-- Deletion available via Settings → Privacy → Delete Voiceprint
+**Web search and weather.** Search queries go to DuckDuckGo. Location queries go to geocoding services and wttr.in. All at your explicit request.
 
-### 4.3 CCPA §1798.100 — Notice at Collection
+**What stays local.** Wake-word detection, speech transcription (Whisper), speaker verification, voice biometrics, conversation history storage, and all app settings.
 
-Categories of Personal Information collected in the preceding 12 months:
-1. Identifiers (name, IP address)
-2. Biometric information (voiceprint, if enrolled)
-3. Internet/electronic activity (conversation history, search queries)
-4. Geolocation data (approximate, from IP)
-5. Audio/electronic data (voice recordings for wake samples)
-6. Inferences (preferences, routines)
-
-**No sale or sharing** for cross-context behavioral advertising (CCPA §1798.120).
-
-### 4.4 BIPA (740 ILCS 14) — Biometric Information
-
-- **Retention schedule:** voiceprint retained until earlier of: (a) user-initiated deletion, (b) app uninstall, or (c) 3 years from last use
-- **Consent:** written release obtained prior to collection
-- **Prohibition on sale:** biometric data is not sold, licensed, or otherwise traded
-- **No third-party disclosure:** biometric data never leaves Device
+We do not operate a central cloud. There is no PilotAI server that receives your data.
 
 ---
 
-## 5. PURPOSES OF PROCESSING
+## 4. What we do not do
 
-Personal Data is processed solely for:
-
-1. **Provision of the voice assistant service** — wake detection, transcription, AI response, feature execution
-2. **Personalization** — name, preferences, conversation continuity
-3. **Feature functionality** — email (Gmail), messaging (WhatsApp), search, weather, automation
-4. **Service improvement** — anonymous local usage statistics
-
-**Prohibited processing:** The App does not sell Personal Data, does not process for behavioral advertising, does not train third-party AI models, and does not engage in automated decision-making producing legal effects concerning the data subject (GDPR Art. 22).
+- We do not sell your personal data.
+- We do not include ad SDKs.
+- We do not include analytics or crash-reporting SDKs.
+- We do not train third-party AI models on your data.
+- We do not share data for cross-context behavioral advertising.
+- We do not collect precise geolocation, browsing history beyond the active browser tab, contact lists beyond names for WhatsApp addressing, financial information, health data, or sensitive categories of personal data.
 
 ---
 
-## 6. DATA RETENTION
+## 5. Local storage and security
 
-| Data Category | Retention Period | Deletion Mechanism |
-|---------------|-----------------|-------------------|
-| Wake detection audio | Not retained (processed in 64ms chunks) | Automatic |
-| Transcription audio | Discarded after transcription | Automatic |
-| Conversation history | Until data subject initiates deletion | Settings → Privacy → Delete Conversations |
-| User memories | Until data subject initiates deletion | Settings → Privacy → Delete Memories |
-| Voiceprint (biometric) | Until data subject initiates deletion or 3 years from last use | Settings → Privacy → Delete Voiceprint |
-| Wake audio samples | Until data subject initiates deletion | Delete `wake_samples/` |
-| Gmail OAuth tokens | Until revocation or app uninstall | Settings → Gmail → Disconnect |
-| API keys | Until modification or app uninstall | Settings → API Key |
-| Send history | Until data subject initiates deletion | Settings → Privacy → Clear History |
-| Automation data | Until data subject initiates deletion | Settings → Privacy → Clear Click Memory |
-| Usage statistics | Until data subject initiates deletion | Settings → Privacy → Reset Statistics |
+The app stores connection secrets (API keys) locally using AES-256-GCM encryption. Gmail OAuth tokens are stored with restricted file-system permissions. Conversation history, memories, voiceprints, and settings are stored in app-private storage (`%APPDATA%\PilotAI\` and app data directories).
 
-Complete data removal: delete `%APPDATA%\PilotAI\` directory.
+Temporary files (e.g., TTS audio output) are written to app cache and discarded after use.
 
 ---
 
-## 7. INTERNATIONAL DATA TRANSFERS (GDPR Art. 44–49)
+## 6. Retention
 
-Data transferred to the United States for AI processing (Groq) and email (Google) is governed by:
+| Data | Retained until |
+|------|---------------|
+| Wake-word audio | Not retained (64ms chunks, processed in real time) |
+| Transcription audio | Discarded after transcription completes |
+| Conversation history | You delete it (Settings → Privacy → Delete Conversations) |
+| User memories | You delete them (Settings → Privacy → Delete Memories) |
+| Voiceprint | You delete it or 3 years after last use (Settings → Privacy → Delete Voiceprint) |
+| Wake audio samples | You delete them (delete `wake_samples/`) |
+| Gmail OAuth tokens | You revoke them or uninstall the app |
+| API key | You change it or uninstall the app |
 
-1. **Standard Contractual Clauses (SCCs)** — European Commission Decision 2021/914, Module 2 (Controller-to-Processor). Available on request.
-2. **EU-US Data Privacy Framework** — for participating entities
-3. **No transfer** occurs for Device-local processing (wake detection, transcription, biometric verification, storage)
-
-For transfers where no adequacy decision or appropriate safeguard exists, processing is limited to purposes for which the data subject has given explicit consent (Art. 49(1)(a)) or where processing is necessary for contract performance (Art. 49(1)(b)).
-
----
-
-## 8. DATA SUBJECT RIGHTS
-
-### 8.1 Right of Access (GDPR Art. 15 / CCPA §1798.100)
-Data subject may request confirmation of whether Personal Data is processed and access such data.
-
-### 8.2 Right to Rectification (GDPR Art. 16)
-Inaccurate Personal Data shall be corrected without undue delay via Settings.
-
-### 8.3 Right to Erasure (GDPR Art. 17 / CCPA §1798.105)
-Data subject may request deletion of Personal Data. The Controller shall comply without undue delay where:
-- Data is no longer necessary for the purpose for which it was collected
-- Consent is withdrawn and no other legal basis exists
-- Data subject objects and no overriding legitimate grounds exist
-- Data has been unlawfully processed
-- Erasure is required by Union or Member State law
-
-Deletion methods: (a) in-App Settings controls, (b) manual deletion of `%APPDATA%\PilotAI\`, (c) email request to privacy@pilotai.app
-
-### 8.4 Right to Restrict Processing (GDPR Art. 18)
-Data subject may obtain restriction where accuracy is contested, processing is unlawful, or data subject has objected.
-
-### 8.5 Right to Data Portability (GDPR Art. 20)
-Data subject may request receipt of Personal Data in structured, commonly used, machine-readable format (JSON). Response within 30 days.
-
-### 8.6 Right to Object (GDPR Art. 21)
-Data subject may object to processing based on legitimate interests (Art. 6(1)(f)). The Controller shall cease processing unless demonstrating compelling legitimate grounds.
-
-### 8.7 Right to Withdraw Consent (GDPR Art. 7(3))
-Where processing is based on consent, data subject may withdraw at any time. Withdrawal does not affect lawfulness of processing before withdrawal.
-
-### 8.8 Right to Opt Out of Sale/Sharing (CCPA §1798.120)
-No sale or sharing occurs. No affirmative opt-out required.
-
-### 8.9 Right to Non-Discrimination (CCPA §1798.125)
-The Controller shall not discriminate against a data subject for exercising any right.
-
-### 8.10 Right to Lodge Complaint (GDPR Art. 77)
-Data subject has the right to lodge a complaint with a supervisory authority, particularly in the Member State of habitual residence.
+Complete data removal: delete `%APPDATA%\PilotAI\`.
 
 ---
 
-## 9. DATA SECURITY (GDPR Art. 32)
+## 7. Your choices
 
-The Controller implements appropriate technical and organizational measures:
-
-| Measure | Implementation |
-|---------|---------------|
-| Encryption at rest | AES-256-GCM for API keys |
-| Access controls | File system permissions restrict OAuth token access |
-| Device-local processing | Wake detection, transcription, biometrics processed on Device |
-| No cloud storage | All user data stored on Device |
-| Input validation | No unvalidated data accepted from external sources |
-
-**Risk acknowledgment:** No security measure provides absolute protection. Data subject uses the App at their own risk. Suspected breaches shall be reported to privacy@pilotai.app immediately.
+- **Permissions.** You can grant or revoke microphone, file system, and other permissions at any time.
+- **Features.** You can disable wake word, voice biometrics, Gmail, WhatsApp, screen capture, web search, and other features in Settings.
+- **AI provider.** You can switch between Groq (cloud) and Ollama (local) at any time. Local mode sends no data off your device.
+- **Data deletion.** You can delete conversations, memories, voiceprints, and history from Settings → Privacy.
+- **Uninstall.** Removing the app deletes all locally stored data.
 
 ---
 
-## 10. DATA BREACH NOTIFICATION (GDPR Art. 33–34)
+## 8. Changes and contact
 
-In the event of a Personal Data breach likely to result in a risk to rights and freedoms:
-- **Supervisory authority:** notified within 72 hours (Art. 33(1))
-- **Data subject:** notified without undue delay (Art. 34(1))
-- **Content:** nature of breach, categories of data involved, likely consequences, measures taken or proposed
+We may update this policy as the app changes. The updated version will be posted here with a new effective date.
 
----
+For privacy or security questions: **pilotaifeedback@gmail.com**
 
-## 11. CHILDREN'S PRIVACY (COPPA — 15 U.S.C. §§6501–6506)
-
-The App is not directed at children under 13. The Controller does not knowingly collect Personal Data from children under 13. An age gate requiring confirmation of age ≥ 13 is presented during onboarding. Upon discovery of collection from a child under 13, the Controller shall delete such data immediately. Reports: privacy@pilotai.app.
-
----
-
-## 12. CHANGES TO THIS POLICY
-
-Material changes shall be notified via in-app notification or email (if provided). Continued use after the Effective Date constitutes acceptance. Previous versions available upon request.
-
----
-
-## 13. GOVERNING LAW
-
-This Privacy Policy is governed by the laws of [Jurisdiction], without regard to conflict of laws principles. Disputes arising from this Policy shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction].
-
----
-
-## 14. COMPLAINT AUTHORITIES BY JURISDICTION
-
-| Jurisdiction | Authority | Contact |
-|--------------|-----------|---------|
-| EU/EEA | Local Data Protection Authority | Per Member State |
-| UK | Information Commissioner's Office (ICO) | https://ico.org.uk |
-| California (USA) | California Attorney General | https://oag.ca.gov/privacy |
-| Illinois (USA) — BIPA | Illinois Attorney General | https://illinoisattorneygeneral.gov |
-| Canada | Office of the Privacy Commissioner (OPC) | https://priv.gc.ca |
-| Brazil | ANPD | https://www.gov.br/anpd |
-| Australia | OAIC | https://oaic.gov.au |
-
----
-
-*Document history: v1.0 — July 20, 2026*
+Data subject requests (access, deletion, portability): **pilotaifeedback@gmail.com** — we respond within 30 days.
