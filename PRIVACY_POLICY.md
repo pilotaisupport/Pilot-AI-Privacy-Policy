@@ -5,7 +5,7 @@
 
 ---
 
-## §1. DEFINITIONS
+## 1. DEFINITIONS
 
 **"App"** means PilotAI desktop software for Windows.
 **"Device"** means the user's personal computer.
@@ -19,7 +19,7 @@
 
 ---
 
-## §2. CONTROLLER IDENTITY & CONTACT
+## 2. CONTROLLER IDENTITY & CONTACT
 
 | Role | Contact |
 |------|---------|
@@ -30,7 +30,7 @@
 
 ---
 
-## §3. PERSONAL DATA COLLECTED
+## 3. PERSONAL DATA COLLECTED
 
 ### 3.1 Data Provided by the Data Subject
 
@@ -67,7 +67,7 @@ The App does not collect: precise geolocation, browsing history (beyond active t
 
 ---
 
-## §4. LEGAL BASES FOR PROCESSING
+## 4. LEGAL BASES FOR PROCESSING
 
 ### 4.1 GDPR Art. 6 — Lawfulness of Processing
 
@@ -110,7 +110,7 @@ Categories of Personal Information collected in the preceding 12 months:
 
 ---
 
-## §5. PURPOSES OF PROCESSING
+## 5. PURPOSES OF PROCESSING
 
 Personal Data is processed solely for:
 
@@ -123,7 +123,7 @@ Personal Data is processed solely for:
 
 ---
 
-## §6. DATA RETENTION
+## 6. DATA RETENTION
 
 | Data Category | Retention Period | Deletion Mechanism |
 |---------------|-----------------|-------------------|
@@ -143,7 +143,7 @@ Complete data removal: delete `%APPDATA%\PilotAI\` directory.
 
 ---
 
-## §7. INTERNATIONAL DATA TRANSFERS (GDPR Art. 44–49)
+## 7. INTERNATIONAL DATA TRANSFERS (GDPR Art. 44–49)
 
 Data transferred to the United States for AI processing (Groq) and email (Google) is governed by:
 
@@ -155,7 +155,7 @@ For transfers where no adequacy decision or appropriate safeguard exists, proces
 
 ---
 
-## §8. DATA SUBJECT RIGHTS
+## 8. DATA SUBJECT RIGHTS
 
 ### 8.1 Right of Access (GDPR Art. 15 / CCPA §1798.100)
 Data subject may request confirmation of whether Personal Data is processed and access such data.
@@ -196,7 +196,7 @@ Data subject has the right to lodge a complaint with a supervisory authority, pa
 
 ---
 
-## §9. DATA SECURITY (GDPR Art. 32)
+## 9. DATA SECURITY (GDPR Art. 32)
 
 The Controller implements appropriate technical and organizational measures:
 
@@ -212,7 +212,7 @@ The Controller implements appropriate technical and organizational measures:
 
 ---
 
-## §10. DATA BREACH NOTIFICATION (GDPR Art. 33–34)
+## 10. DATA BREACH NOTIFICATION (GDPR Art. 33–34)
 
 In the event of a Personal Data breach likely to result in a risk to rights and freedoms:
 - **Supervisory authority:** notified within 72 hours (Art. 33(1))
@@ -221,25 +221,25 @@ In the event of a Personal Data breach likely to result in a risk to rights and 
 
 ---
 
-## §11. CHILDREN'S PRIVACY (COPPA — 15 U.S.C. §§6501–6506)
+## 11. CHILDREN'S PRIVACY (COPPA — 15 U.S.C. §§6501–6506)
 
 The App is not directed at children under 13. The Controller does not knowingly collect Personal Data from children under 13. An age gate requiring confirmation of age ≥ 13 is presented during onboarding. Upon discovery of collection from a child under 13, the Controller shall delete such data immediately. Reports: privacy@pilotai.app.
 
 ---
 
-## §12. CHANGES TO THIS POLICY
+## 12. CHANGES TO THIS POLICY
 
 Material changes shall be notified via in-app notification or email (if provided). Continued use after the Effective Date constitutes acceptance. Previous versions available upon request.
 
 ---
 
-## §13. GOVERNING LAW
+## 13. GOVERNING LAW
 
 This Privacy Policy is governed by the laws of [Jurisdiction], without regard to conflict of laws principles. Disputes arising from this Policy shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction].
 
 ---
 
-## §14. COMPLAINT AUTHORITIES BY JURISDICTION
+## 14. COMPLAINT AUTHORITIES BY JURISDICTION
 
 | Jurisdiction | Authority | Contact |
 |--------------|-----------|---------|
